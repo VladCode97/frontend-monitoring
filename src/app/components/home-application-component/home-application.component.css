@@ -1,0 +1,107 @@
+.info {
+  margin-top: -1.5%;
+  background: #673ab7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #512da8,
+    #673ab7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #512da8,
+    #673ab7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 3%;
+}
+
+.info .title-info {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 60px;
+}
+
+.info .subtitle-info {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: bold;
+  color: #d2d0fe;
+}
+
+.info .title-info span {
+  color: #ffa323;
+}
+
+.info p {
+  font-family: "Roboto Condensed", sans-serif;
+  color: white;
+  text-align: justify;
+}
+
+.info .title-info::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 2px;
+  background: #d2d0fe;
+  margin-top: 1%;
+}
+
+.container-info {
+  width: 80%;
+  margin: 5% auto;
+  font-family: "Roboto Condensed", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-gap: 15px;
+}
+
+.container-info .loggin-form {
+  box-shadow: 0px 10px 1px #ddd, 0 10px 20px #ccc;
+  padding: 4%;
+}
+
+
+.container-info .loggin-info .tittle-login {
+  margin-top: 12%;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.container-info .loggin-info .tittle-login::after {
+  content: "";
+  display: block;
+  width: 70%;
+  height: 2px;
+  background: #ffa323;
+  margin-top: 1%;
+  margin-bottom: 5%;
+}
+
+
+.container-info .loggin-info p {
+  text-align: justify;
+  width: 80%;
+}
+
+.mat-form-field {
+  display: block;
+}
+
+.button-loggin {
+  background: white;
+  font-weight: bold;
+  color: black;
+  font-family: "Roboto Condensed", sans-serif;
+  padding: 2%;
+  outline: none;
+  border: 1px solid;
+}
+
+.message-error {
+  color: red;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}

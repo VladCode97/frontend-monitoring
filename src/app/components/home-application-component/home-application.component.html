@@ -1,0 +1,50 @@
+<!-- Information -->
+<div class="info">
+    <h1 class="title-info"> Staff Ping</h1>
+    <h3 class="subtitle-info">2019</h3>
+    <p>
+        Esta aplicación monitorea las diferentes aplicaciones que ofrece la empresa TIQAL SAS, mostrando graficas de
+        latencia y disponibilidad de los diferentes usuarios que esta empresa ofrece sus servicios.
+    </p>
+</div>
+<!-- Container -info -->
+<div class="container-info">
+    <div class="loggin-info">
+        <h1 class="tittle-login"> Nota de seguridad </h1>
+        <p>
+            La seguridad es importante en esta aplicacion por eso es importante que te loguees antes de iniciar sesion.
+        </p>
+        <p>
+            En esta aplicación existen dos tipos usuarios: Administrator y usuario tiqal. Recuerdalo
+        </p>
+    </div>
+    <div class="loggin-form">
+        <form [formGroup]="formAuth">
+            <!-- Form for Email-->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <mat-form-field>
+                    <input matInput type="text" id="email" formControlName="emailUser">
+                    <mat-error *ngIf="formAuth.get('emailUser').hasError('required')">
+                        Email es un campo requerido
+                    </mat-error>
+                    <mat-error *ngIf="formAuth.get('emailUser').hasError('email')">
+                        Email no valido
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <!-- Form for password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <mat-form-field>
+                    <input matInput type="password" id="password" formControlName="passwordUser">
+                    <mat-error *ngIf="formAuth.get('passwordUser').hasError('required')">
+                        Password es un campo requerido
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <h2 class="message-error"> {{message}} </h2>
+            <button type="submit" (click)="signIn()" class="button-loggin">Continuar</button>
+        </form>
+    </div>
+</div>
