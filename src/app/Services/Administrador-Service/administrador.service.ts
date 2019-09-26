@@ -4,28 +4,26 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators'
 import { Observable } from 'rxjs';
+import { BaseService } from '../Base-Service/Base_Service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdministradorService {
 
-  constructor(private httpClient: HttpClient, private router: Router) { }
+  constructor(private baseService: BaseService) {
+  }
 
   createClient(client: any): Observable<any> {
-    return this.httpClient.post(`${environment.hostAdminCreateClient}`, client, {
-      headers: new HttpHeaders({
-        token: localStorage.getItem('token'), authorization: localStorage.getItem('authorization')
-      })
-    }).pipe(map(async (responseServer: any) => {
-      let response = (await responseServer);
-      console.log(response.message);
-      if (response.message === 'Client already exists') {
-        return response.message;
-      } else {
-        return this.router.navigateByUrl('/admin');
-      }
-    }));
+    return this.baseService.create(client, `${environment.hostAdminCreateClient}`);
+  }
+
+  createUser(user: any): Observable<any> {
+    return this.baseService.create(user, `${environment.hostAdminCreateUser}`);
+  }
+
+  updateClient(client: any): Observable<any> {
+    return this.baseService.update(client, `${environment.hostAdminUpdateHostUser}`);
   }
 
 }

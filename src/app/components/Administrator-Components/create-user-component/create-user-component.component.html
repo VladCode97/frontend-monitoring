@@ -1,0 +1,52 @@
+<!-- Container -info -->
+<div class="container-form">
+    <div class="form">
+        <h1 class="tittle-form"> Creacion de usuarios</h1>
+        <form [formGroup]="formUser">
+            <!-- Form for User name-->
+            <div class="form-group">
+                <label for="nameUser">Nombre del usuario</label>
+                <mat-form-field>
+                    <input matInput type="text" id="nameUser" formControlName="nameUser">
+                    <mat-error *ngIf="formUser.get('nameUser').hasError('required')">
+                        Nombre del usuario es un campo requerido
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <!-- Form for Role user-->
+            <div class="form-group">
+                <label for="roleUser">Rol del usuario</label>
+                <mat-form-field>
+                    <input matInput type="text" id="roleUser" formControlName="roleUser">
+                    <mat-error *ngIf="formUser.get('roleUser').hasError('required')">
+                        Role del usuario es un campo requerido
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <!-- Form for Password User-->
+            <div class="form-group">
+                <label for="passwordUser">Contraseña del usuario</label>
+                <mat-form-field>
+                    <input matInput type="text" id="passwordUser" formControlName="passwordUser">
+                    <mat-error *ngIf="formUser.get('passwordUser').hasError('required')">
+                        Contraseña del usuario es un campo requerido
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <!-- Form for Email User-->
+            <div class="form-group">
+                <label for="emailUser">Email del usuario</label>
+                <mat-form-field>
+                    <input matInput type="text" id="emailUser" formControlName="emailUser">
+                    <mat-error *ngIf="formUser.get('emailUser').hasError('required')">
+                        Email es un campo requerido
+                    </mat-error>
+                    <mat-error *ngIf="formUser.get('emailUser').hasError('email')">
+                        Email no valido
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <button type="submit" (click)="createUser()" class="button-form">Continuar</button>
+        </form>
+    </div>
+</div>

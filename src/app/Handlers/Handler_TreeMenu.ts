@@ -21,7 +21,7 @@ class MockUpTree {
                     },
                     {
                         name: 'Actualizar cliente',
-                        link: '/admin/update/clients',
+                        link: '/admin/update/client',
                     },
                 ]
             }];
