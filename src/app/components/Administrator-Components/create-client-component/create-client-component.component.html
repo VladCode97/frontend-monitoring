@@ -1,1 +1,53 @@
-<p>create-client-component works!</p>
+<!-- Container -info -->
+<div class="container-form">
+        <div class="form">
+            <h1 class="tittle-form"> Creacion de clientes</h1>
+            <form [formGroup]="formClient">
+                <!-- Form for Name Client-->
+                <div class="form-group">
+                    <label for="nameClient">Nombre del cliente</label>
+                    <mat-form-field>
+                        <input matInput type="text" id="nameclient" formControlName="nameClient">
+                        <mat-error *ngIf="formClient.get('nameClient').hasError('required')">
+                            Nombre del cliente es un campo requerido
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <!-- Form for Client Alias-->
+                <div class="form-group">
+                    <label for="aliasClient">Alias del cliente</label>
+                    <mat-form-field>
+                        <input matInput type="text" id="aliasClient" formControlName="aliasClient">
+                        <mat-error *ngIf="formClient.get('aliasClient').hasError('required')">
+                            Alias del cliente es un campo requerido
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <!-- Form for Client Host-->
+                <div class="form-group">
+                    <label for="hostClient">Host del cliente</label>
+                    <mat-form-field>
+                        <input matInput type="text" id="hostClient" formControlName="hostClient">
+                        <mat-error *ngIf="formClient.get('hostClient').hasError('required')">
+                            Host del cliente es un campo requerido
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <!-- Form for Email-->
+                <div class="form-group">
+                    <label for="emailClient">Email del cliente</label>
+                    <mat-form-field>
+                        <input matInput type="text" id="emailClient" formControlName="emailClient">
+                        <mat-error *ngIf="formClient.get('emailClient').hasError('required')">
+                            Email es un campo requerido
+                        </mat-error>
+                        <mat-error *ngIf="formClient.get('emailClient').hasError('email')">
+                            Email no valido
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <h2 class="message-error"> {{message}} </h2>
+                <button type="submit" (click)="createClient()" class="button-form">Continuar</button>
+            </form>
+        </div>
+    </div>

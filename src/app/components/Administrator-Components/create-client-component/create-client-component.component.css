@@ -1,0 +1,53 @@
+.tittle-form {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.container-form {
+  width: 80%;
+  margin: 5% auto;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.container-form .form {
+  box-shadow: 0px 10px 1px #ddd, 0 10px 20px #ccc;
+  padding: 4%;
+}
+
+.container-form .form label {
+    font-weight: bold;
+}
+
+.container-form .tittle-form::after {
+  content: "";
+  display: block;
+  width: 70%;
+  height: 2px;
+  background: #ffa323;
+  margin-top: 1%;
+  margin-bottom: 5%;
+}
+
+.mat-form-field {
+  display: block;
+}
+
+.button-form {
+  background: white;
+  font-weight: bold;
+  color: black;
+  font-family: "Roboto Condensed", sans-serif;
+  padding: 2%;
+  outline: none;
+  border: 1px solid;
+}
+
+.message-error {
+  color: red;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}

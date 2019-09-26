@@ -4,6 +4,7 @@
 
 export const environment = {
   hostSignIn: 'http://localhost:5000/api/auth/signIn',
+  hostAdminCreateClient: 'http://localhost:5000/api/admin/createClient',
   production: false
 };
 

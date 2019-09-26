@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AuthServiceService } from 'src/app/Services/Auth-Service/auth-service.service';
+import { AuthService } from 'src/app/Services/Auth-Service/auth-service.service';
 
 @Component({
   selector: 'app-home-application-component',
@@ -12,7 +12,7 @@ export class HomeApplicationComponent implements OnInit {
   public formAuth: FormGroup;
   public message;
 
-  constructor(private authService: AuthServiceService) {
+  constructor(private authService: AuthService) {
     this.formAuth = new FormGroup({
       emailUser: new FormControl('', [Validators.email, Validators.required]),
       passwordUser: new FormControl('', [Validators.required])

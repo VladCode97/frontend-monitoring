@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AdministradorServiceService } from './administrador-service.service';
+import { AdministradorService } from './administrador.service';
 
 describe('AdministradorServiceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AdministradorServiceService = TestBed.get(AdministradorServiceService);
+    const service: AdministradorService = TestBed.get(AdministradorService);
     expect(service).toBeTruthy();
   });
 });

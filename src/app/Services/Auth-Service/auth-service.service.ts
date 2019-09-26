@@ -7,7 +7,8 @@ import { map } from 'rxjs/operators'
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService {
+
+export class AuthService {
 
 
   constructor(private httpClient: HttpClient, private httpRouter: Router) { }
@@ -20,9 +21,15 @@ export class AuthServiceService {
       } else {
         localStorage.setItem('token', response);
         localStorage.setItem('authorization', `${true}`);
-        return this.httpRouter.navigateByUrl('/home');
+        return this.httpRouter.navigateByUrl('/admin');
       }
     }));
+  }
+
+  signOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('authorization');
+    return this.httpRouter.navigateByUrl('/home');
   }
 
 }
