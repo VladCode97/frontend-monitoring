@@ -16,7 +16,7 @@ class MockUpTree {
                         link: '/admin/create/clients',
                     },
                     {
-                        name: 'Vista de graficas',
+                        name: 'Lista de clientes',
                         link: '/admin/view/clients',
                     },
                     {

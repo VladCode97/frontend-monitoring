@@ -1,1 +1,47 @@
-<p>view-clients-component works!</p>
+<div class="container-view-clients">
+
+    <h1 class="title-view-clients">Lista de <span>Clientes</span></h1>
+
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Busqueda de clientes">
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="Nombre">
+            <th mat-header-cell *matHeaderCellDef> Nombre del cliente </th>
+            <td mat-cell *matCellDef="let element"> {{element.nameClient}} </td>
+        </ng-container>
+
+        <!-- Host Column -->
+        <ng-container matColumnDef="Host">
+            <th mat-header-cell *matHeaderCellDef> Host del cliente </th>
+            <td mat-cell *matCellDef="let element"> {{element.hostClient}} </td>
+        </ng-container>
+
+        <!-- alias Column -->
+        <ng-container matColumnDef="Alias">
+            <th mat-header-cell *matHeaderCellDef> Alias del cliente </th>
+            <td mat-cell *matCellDef="let element"> {{element.aliasClient}} </td>
+        </ng-container>
+
+        <!-- last update Column -->
+        <ng-container matColumnDef="UltimaActualizacion">
+            <th mat-header-cell *matHeaderCellDef> Ultima Actualizacion </th>
+            <td mat-cell *matCellDef="let element"> {{element.lastDateOfTheConsultation}} </td>
+        </ng-container>
+
+        <!-- last update Column -->
+        <ng-container matColumnDef="Disponibilidad">
+            <th mat-header-cell *matHeaderCellDef> ANS de disponibilidad</th>
+            <td mat-cell *matCellDef="let element"> {{element.CustomerAvailabilityByMetric.toFixed(4)}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="resultsLength" [pageSize]="5"></mat-paginator>
+
+</div>

@@ -28,9 +28,7 @@ export class UpdateClientComponent implements OnInit {
         let message = (await response);
         if (message != undefined && (message).length !== 0) {
           this.snackBar.open(`${message}`, '');
-        } else {
-          this.snackBar.open('Updated host', '');
-          this.formClient.reset({});
+          this.formClient.reset();
         }
       }));
     }

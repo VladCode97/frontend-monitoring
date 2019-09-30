@@ -6,7 +6,10 @@ export const environment = {
   hostSignIn: 'http://localhost:5000/api/auth/signIn',
   hostAdminCreateClient: 'http://localhost:5000/api/admin/createClient',
   hostAdminCreateUser: 'http://localhost:5000/api/admin/createUser',
-  hostAdminUpdateHostUser: 'http://localhost:5000/api/admin/updateHostByClient',
+  hostAdminUpdateHostClient: 'http://localhost:5000/api/admin/updateHostByClient',
+  hostAdminViewUsers: 'http://localhost:5000/api/admin/viewUsers',
+  hostAdminUpdateStateUser: 'http://localhost:5000/api/admin/updateStateUser',
+  hostAdminViewMetric: 'http://localhost:5000/api/metric/viewMetrics',
   production: false
 };
 

@@ -1,1 +1,49 @@
-<p>view-users-component works!</p>
+<div class="container-view-users">
+
+    <h1 class="titlte-view-users">Lista de <span>Usuarios</span></h1>
+
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Busqueda de usuario">
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="Nombre">
+            <th mat-header-cell *matHeaderCellDef> Nombre del usuario </th>
+            <td mat-cell *matCellDef="let element"> {{element.nameUser}} </td>
+        </ng-container>
+
+        <!-- Role Column -->
+        <ng-container matColumnDef="Rol">
+            <th mat-header-cell *matHeaderCellDef> Rol del usuario </th>
+            <td mat-cell *matCellDef="let element"> {{element.roleUser}} </td>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="Email">
+            <th mat-header-cell *matHeaderCellDef> Email del usuario </th>
+            <td mat-cell *matCellDef="let element"> {{element.emailUser}} </td>
+        </ng-container>
+
+        <!-- State Column -->
+        <ng-container matColumnDef="Estado">
+            <th mat-header-cell *matHeaderCellDef> Estado del usuario </th>
+            <td mat-cell *matCellDef="let element"> {{element.stateUser === true ? 'Activo' : 'Inactivo'}} </td>
+        </ng-container>
+
+        <!-- Change State Column -->
+        <ng-container matColumnDef="CambiarEstado">
+            <th mat-header-cell *matHeaderCellDef> Cambiar estado del usuario </th>
+            <td mat-cell *matCellDef="let element">
+                <button class="button-update-user" (click)="openDialog(element.nameUser)">Cambiar estado</button>
+            </td>
+        </ng-container>
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="resultsLength" [pageSize]="5"></mat-paginator>
+</div>

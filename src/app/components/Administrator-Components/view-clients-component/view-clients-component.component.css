@@ -1,0 +1,38 @@
+.container-view-clients {
+  width: 90%;
+  margin: auto;
+}
+
+.mat-form-field {
+  width: 50%;
+  margin: auto;
+}
+
+table.mat-table {
+  width: 100%;
+  margin: auto;
+}
+
+.title-view-clients {
+  font-family: "Ubuntu", sans-serif;
+  margin-top: 6%;
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 5%;
+  padding: 3%;
+}
+
+.title-view-clients span {
+  color: #ffa323;
+  font-size: 50px;
+}
+
+.button-update-user {
+  background: white;
+  font-weight: bold;
+  color: black;
+  font-family: "Roboto Condensed", sans-serif;
+  padding: 2%;
+  outline: none;
+  border: 1px solid;
+}

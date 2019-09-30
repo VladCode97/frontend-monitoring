@@ -23,7 +23,28 @@ export class AdministradorService {
   }
 
   updateClient(client: any): Observable<any> {
-    return this.baseService.update(client, `${environment.hostAdminUpdateHostUser}`);
+    return this.baseService.update(client, `${environment.hostAdminUpdateHostClient}`);
   }
+
+  updateStateUser(user: any): Observable<any> {
+    return this.baseService.update(user, `${environment.hostAdminUpdateStateUser}`)
+  }
+
+  async viewUsers() {
+    return await this.baseService.view(environment.hostAdminViewUsers).
+      toPromise().
+      then((data: any) =>  data).
+      catch((error) => error);
+  }
+
+  viewClients(): Observable<any> {
+    return this.baseService.view(environment.hostAdminViewMetric);
+  }
+
+  async filterUserbyRoleTiqal() {
+    let arrayUsers = (await this.viewUsers());
+    return arrayUsers.filter((element) => element.roleUser === 'USUARIO TIQAL')
+  }
+
 
 }

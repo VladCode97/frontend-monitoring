@@ -7,6 +7,8 @@ import { HomeAdministratorComponent } from './components/Administrator-Component
 import { CreateClientComponent } from './components/Administrator-Components/create-client-component/create-client-component.component';
 import { CreateUserComponent } from './components/Administrator-Components/create-user-component/create-user-component.component';
 import { UpdateClientComponent } from './components/Administrator-Components/update-client-component/update-client-component.component';
+import { ViewUsersComponent } from './components/Administrator-Components/view-users-component/view-users-component.component';
+import { ViewClientsComponent } from './components/Administrator-Components/view-clients-component/view-clients-component.component';
 
 
 const routes: Routes = [
@@ -18,7 +20,9 @@ const routes: Routes = [
       {path: '', component: HomeAdministratorComponent},
       {path: 'create/clients', component: CreateClientComponent},
       {path: 'create/users', component: CreateUserComponent},
-      {path: 'update/client', component: UpdateClientComponent}
+      {path: 'update/client', component: UpdateClientComponent},
+      {path: 'view/users', component: ViewUsersComponent},
+      {path: 'view/clients', component: ViewClientsComponent}
     ]
   }
 ];

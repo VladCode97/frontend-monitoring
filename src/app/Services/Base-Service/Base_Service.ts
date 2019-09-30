@@ -38,6 +38,23 @@ export class BaseService {
             let response = (await responseServer);
             if (this.messagesServer.includes(response.message)) {
                 return response.message;
+            }else {
+                return response.message;
+            }
+        }));
+    }
+
+    view(routeServer: string): Observable<any> {
+        return this.httpClient.get(routeServer, {
+            headers: new HttpHeaders({
+                token: localStorage.getItem('token'), authorization: localStorage.getItem('authorization')
+            })
+        }).pipe(map(async (responseServer: any) => {
+            let response = (await responseServer);
+            if (this.messagesServer.includes(response.message)) {
+                return response.message;
+            }else {
+                return response.message;
             }
         }));
     }

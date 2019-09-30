@@ -1,0 +1,57 @@
+.title-updateUser-form {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.title-updateUser-form::after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 2px;
+  background: #ffa323;
+  margin-top: 1%;
+  margin-bottom: 5%;
+}
+
+.container-form {
+  margin: 5% auto;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.form {
+  width: 80%;
+}
+
+.container-form .form label {
+  font-weight: bold;
+}
+
+.mat-form-field {
+  display: block;
+}
+
+.button-form {
+  background: white;
+  font-weight: bold;
+  color: black;
+  font-family: "Roboto Condensed", sans-serif;
+  padding: 2%;
+  outline: none;
+  border: 1px solid;
+}
+
+input {
+  display: block;
+  color: black;
+  outline: none;
+  border: none;
+}
+
+select {
+  font-family: "Roboto Condensed", sans-serif;
+  display: block;
+  color: black;
+  outline: none;
+  border: 1px solid;
+}
