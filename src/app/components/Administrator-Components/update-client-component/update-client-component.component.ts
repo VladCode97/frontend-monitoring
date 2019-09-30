@@ -27,11 +27,12 @@ export class UpdateClientComponent implements OnInit {
       (await this.adminstratorService.updateClient(this.formClient.value).subscribe(async (response) => {
         let message = (await response);
         if (message != undefined && (message).length !== 0) {
-          this.snackBar.open(`${message}`, '');
+          this.snackBar.open(`${message}`, '', {
+            duration: 2000,
+          });
           this.formClient.reset();
         }
       }));
     }
   }
-
 }

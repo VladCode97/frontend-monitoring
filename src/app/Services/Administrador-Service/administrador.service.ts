@@ -6,9 +6,7 @@ import { map } from 'rxjs/operators'
 import { Observable } from 'rxjs';
 import { BaseService } from '../Base-Service/Base_Service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AdministradorService {
 
   constructor(private baseService: BaseService) {

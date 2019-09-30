@@ -19,9 +19,14 @@ export class AuthService {
       if (response === 'User not found' || response === 'Password Incorrect') {
         return response;
       } else {
-        localStorage.setItem('token', response);
+        localStorage.setItem('token', response.tokenUser);
         localStorage.setItem('authorization', `${true}`);
-        return this.httpRouter.navigateByUrl('/admin');
+        if (response.role === 'ADMIN') {
+          return this.httpRouter.navigateByUrl('/admin');
+        } else if(response.role === 'USUARIO TIQAL') {
+          return this.httpRouter.navigateByUrl('/user');
+        }
+        
       }
     }));
   }

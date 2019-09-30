@@ -20,6 +20,11 @@ import { BaseService } from './Services/Base-Service/Base_Service';
 import { ViewUsersComponent } from './components/Administrator-Components/view-users-component/view-users-component.component';
 import { UpdateStateUserComponent } from './components/Administrator-Components/update-state-user/update-state-user.component';
 import { ViewClientsComponent } from './components/Administrator-Components/view-clients-component/view-clients-component.component';
+import { ViewGraphicClientComponent } from './components/Administrator-Components/view-graphic-client-component/view-graphic-client-component.component';
+import { ChartsModule } from 'ng2-charts';
+import { UserComponent } from './components/user-component/user-component.component';
+import { ViewClientsUserComponent } from './components/user-component/view-clients/view-clients.component';
+import { HomeUserComponent } from './components/user-component/home-user/home-user.component';
 
 
 @NgModule({
@@ -33,7 +38,12 @@ import { ViewClientsComponent } from './components/Administrator-Components/view
     UpdateClientComponent,
     ViewUsersComponent,
     UpdateStateUserComponent,
-    ViewClientsComponent
+    ViewClientsComponent,
+    ViewGraphicClientComponent,
+    UserComponent,
+    ViewClientsUserComponent,
+    HomeUserComponent
+
   ],
   imports: [
     BrowserModule,
@@ -52,10 +62,12 @@ import { ViewClientsComponent } from './components/Administrator-Components/view
     MatPaginatorModule,
     MatTableModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    ChartsModule
   ],
   entryComponents: [
     UpdateStateUserComponent,
+    ViewGraphicClientComponent
   ],
   providers: [AuthService, AdministradorService, BaseService],
   bootstrap: [AppComponent]

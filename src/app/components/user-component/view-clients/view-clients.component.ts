@@ -1,14 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AdministradorService } from 'src/app/Services/Administrador-Service/administrador.service';
 import { MatTableDataSource, MatPaginator, MatDialog } from '@angular/material';
-import { ViewGraphicClientComponent } from '../view-graphic-client-component/view-graphic-client-component.component';
+import { AdministradorService } from 'src/app/Services/Administrador-Service/administrador.service';
+import { ViewGraphicClientComponent } from '../../Administrator-Components/view-graphic-client-component/view-graphic-client-component.component';
 
 @Component({
-  selector: 'app-view-clients-component',
-  templateUrl: './view-clients-component.component.html',
-  styleUrls: ['./view-clients-component.component.css']
+  selector: 'app-view-clients',
+  templateUrl: './view-clients.component.html',
+  styleUrls: ['./view-clients.component.css']
 })
-export class ViewClientsComponent implements OnInit {
+export class ViewClientsUserComponent implements OnInit {
 
   public arrayClients = [];
   public displayedColumns: string[];

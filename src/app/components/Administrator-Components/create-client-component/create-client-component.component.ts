@@ -32,7 +32,9 @@ export class CreateClientComponent implements OnInit {
         if (message != undefined && (message).length !== 0) {
           this.snackBar.open(`${message}`, '');
         } else {
-          this.snackBar.open('Client created', '');
+          this.snackBar.open('Client created', '', {
+            duration: 2000,
+          })
           this.formClient.reset({});
         }
       }));

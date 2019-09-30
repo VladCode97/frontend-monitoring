@@ -4,6 +4,7 @@ class MockUpTree {
 
     public TREE_DATA: FoodNode[];
     public TREE_DATA_USERS: FoodNode[];
+    public TREE_DATA_USER: FoodNode[];
 
     constructor() {
         this.TREE_DATA = [
@@ -42,6 +43,18 @@ class MockUpTree {
                 ]
             }
         ];
+        this.TREE_DATA_USER = [
+            {
+                name: 'Gestion de Clientes',
+                children: [
+                    {
+                        name: 'Lista clientes',
+                        link: '/user/view/users',
+                        icon: 'list'
+                    }
+                ]
+            }
+        ]
     }
 
     get treeDataClients(): FoodNode[] {

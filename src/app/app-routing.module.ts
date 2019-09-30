@@ -9,6 +9,9 @@ import { CreateUserComponent } from './components/Administrator-Components/creat
 import { UpdateClientComponent } from './components/Administrator-Components/update-client-component/update-client-component.component';
 import { ViewUsersComponent } from './components/Administrator-Components/view-users-component/view-users-component.component';
 import { ViewClientsComponent } from './components/Administrator-Components/view-clients-component/view-clients-component.component';
+import { UserComponent } from './components/user-component/user-component.component';
+import { ViewClientsUserComponent } from './components/user-component/view-clients/view-clients.component';
+import { HomeUserComponent } from './components/user-component/home-user/home-user.component';
 
 
 const routes: Routes = [
@@ -23,6 +26,13 @@ const routes: Routes = [
       {path: 'update/client', component: UpdateClientComponent},
       {path: 'view/users', component: ViewUsersComponent},
       {path: 'view/clients', component: ViewClientsComponent}
+    ]
+  }, 
+  {
+    path: 'user', component: UserComponent, canActivate: [AuthWebGuard],
+    children: [
+      {path: '', component: HomeUserComponent},
+      {path: 'view/users', component: ViewClientsUserComponent}
     ]
   }
 ];

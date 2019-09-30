@@ -33,7 +33,9 @@ export class CreateUserComponent implements OnInit {
         if (message != undefined && (message).length !== 0) {
           this.snackBar.open(`${message}`, '');
         } else {
-          this.snackBar.open('Customer created', '');
+          this.snackBar.open('Customer created', '', {
+            duration: 2000,
+          });
           this.formUser.reset({});
         }
       }));

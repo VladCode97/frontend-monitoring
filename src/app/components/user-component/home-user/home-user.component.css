@@ -1,0 +1,64 @@
+.title-home-user {
+    font-family: "Ubuntu", sans-serif;
+    margin-top: 6%;
+    padding: 5%;
+    font-weight: bold;
+    font-size: 50px;
+  }
+  
+  .title-home-user span {
+    color: #ffa323;
+    font-size: 50px;
+  }
+  
+  .container-home-user {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 10px;
+    width: 90%;
+    margin: auto;
+  }
+  
+  .container-home-user .card-item {
+    box-shadow: 0px 10px 1px #ddd, 0 10px 20px #ccc;
+    padding: 4%;
+  }
+  
+  .container-home-user .card-item{
+      font-family: 'Ubuntu', sans-serif;
+      text-align: center;
+  }
+  
+  .card-item h1 {
+      font-weight: bold;
+      font-size: 25px;
+      margin-top: 5%;
+      padding: 5%;
+  }
+  
+  .card-item h2 {
+      color: #ddd;
+  }
+  
+  .card-item .item-image {
+      margin-top: 5%;
+      width: 15%;
+      margin: auto;
+      background: #E98282;
+      padding: 10px;
+      border-radius: 100px;
+  }
+  
+  .card-item .item-image-green {
+      margin-top: 5%;
+      width: 15%;
+      margin: auto;
+      background: #C5F5C1;
+      padding: 10px;
+      border-radius: 100px;
+  }
+  
+  
+  .card-item .image {
+      width: 70%;
+  }
