@@ -31,12 +31,17 @@ export class AdministradorService {
   async viewUsers() {
     return await this.baseService.view(environment.hostAdminViewUsers).
       toPromise().
-      then((data: any) =>  data).
+      then((data: any) => data).
       catch((error) => error);
   }
 
   viewClients(): Observable<any> {
     return this.baseService.view(environment.hostAdminViewMetric);
+  }
+
+  viewClientsByDates(dateInit, dateFinal): Observable<any> {
+    const body = { dateInit, dateFinal };
+    return this.baseService.createSpecial(body, environment.hostAdminViewMetricByDates);
   }
 
   async filterUserbyRoleTiqal() {

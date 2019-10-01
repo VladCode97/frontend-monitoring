@@ -13,7 +13,7 @@ export class BaseService {
     public messagesServer: Array<string> = new Array<string>();
 
     constructor(private httpClient: HttpClient) {
-        this.messagesServer.push('Client already exists', 'User already exists', 'Error updating client host. Does not exist');
+        this.messagesServer.push('Client already exists', 'User already exists', 'Error updating client host. Does not exist', 'No data for this date');
     }
 
     create(objectCreate: any, routeServer: string): Observable<any> {
@@ -23,7 +23,24 @@ export class BaseService {
             })
         }).pipe(map(async (responseServer: any) => {
             let response = (await responseServer);
+            console.log(responseServer);
             if (this.messagesServer.includes(response.message)) {
+                return response.message;
+            }
+        }));
+    }
+
+    createSpecial(objectCreate: any, routeServer: string): Observable<any> {
+        return this.httpClient.post(routeServer, objectCreate, {
+            headers: new HttpHeaders({
+                token: localStorage.getItem('token'), authorization: localStorage.getItem('authorization')
+            })
+        }).pipe(map(async (responseServer: any) => {
+            let response = (await responseServer);
+            console.log(responseServer);
+            if (this.messagesServer.includes(response.message)) {
+                return response.message;
+            }else {
                 return response.message;
             }
         }));

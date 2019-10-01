@@ -30,7 +30,9 @@ export class CreateClientComponent implements OnInit {
       (await this.adminstratorService.createClient(this.formClient.value).subscribe(async (response) => {
         let message = (await response);
         if (message != undefined && (message).length !== 0) {
-          this.snackBar.open(`${message}`, '');
+          this.snackBar.open(`${message}`, '', {
+            duration: 2000,
+          });
         } else {
           this.snackBar.open('Client created', '', {
             duration: 2000,

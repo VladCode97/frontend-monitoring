@@ -3,8 +3,22 @@
     <h1 class="title-view-clients">Lista de <span>Clientes</span></h1>
 
     <mat-form-field>
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Busqueda de clientes">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar clientes">
     </mat-form-field>
+
+    <form action="" [formGroup]="formDate" class="form-search">
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" formControlName="dateInit" placeholder="Fecha Inicial">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker2" formControlName="dateFinal" placeholder="Fecha Final">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+        <button type="submit" class="button-view-latency" (click)="viewClientByDates()" >Busqueda</button>
+    </form>
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 

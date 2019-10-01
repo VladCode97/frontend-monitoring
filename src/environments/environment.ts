@@ -10,6 +10,7 @@ export const environment = {
   hostAdminViewUsers: 'http://localhost:5000/api/admin/viewUsers',
   hostAdminUpdateStateUser: 'http://localhost:5000/api/admin/updateStateUser',
   hostAdminViewMetric: 'http://localhost:5000/api/metric/viewMetrics',
+  hostAdminViewMetricByDates: 'http://localhost:5000/api/metric/viewMetricsByDate',
   production: false
 };
 

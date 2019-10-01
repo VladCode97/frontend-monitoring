@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeApplicationComponent } from './components/home-application-component/home-application.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule, MatInputModule, MatIconModule, MatListModule, MatTreeModule, MatSnackBarModule, MatPaginatorModule, MatTableModule, MatDialogModule, MatSelectModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatIconModule, MatListModule, MatTreeModule, MatSnackBarModule, MatPaginatorModule, MatTableModule, MatDialogModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AdministratorComponent } from './components/Administrator-Components/administrator-component/administrator.component';
@@ -63,6 +63,8 @@ import { HomeUserComponent } from './components/user-component/home-user/home-us
     MatTableModule,
     MatDialogModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     ChartsModule
   ],
   entryComponents: [
